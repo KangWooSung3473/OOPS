@@ -6,7 +6,7 @@ import { CommentDispatchContext, PostDispatchContext } from "../util/context";
 const ActivityItem = ({type, id ,postId ,title, createdAt})=>{
 
     const nav = useNavigate(); 
-    const date = new Date(createdAt).toLocaleDateString(); 
+    const date = new Date(createdAt + (createdAt.endsWith('Z') || createdAt.includes('+') ? '' : 'Z')).toLocaleDateString('ko-KR');
     const {onDeletePost} = useContext(PostDispatchContext); 
     const {onDeleteComment} = useContext(CommentDispatchContext); 
 

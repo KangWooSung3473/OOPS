@@ -7,7 +7,7 @@ import { formattedId } from "../util/formattedId";
 
 
 const PostItem = ({authorName, ...props})=>{
-    const date = new Date(props.createdAt).toLocaleDateString();
+    const date = new Date(props.createdAt + (props.createdAt.endsWith('Z') || props.createdAt.includes('+') ? '' : 'Z')).toLocaleDateString('ko-KR');
     const nav = useNavigate(); 
     const comments = useContext(CommentDataContext); 
     //댓글수가 화면에 반영되도록 코드를 짜줬다. 

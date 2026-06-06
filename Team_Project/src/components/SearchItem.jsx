@@ -7,7 +7,7 @@ const SearchItem = ({ ...props }) => {
   const nav = useNavigate();
   const users = useContext(UserDataContext);
   const comments = useContext(CommentDataContext);
-  const date = new Date(props.createdAt).toLocaleDateString();
+  const date = new Date(props.createdAt + (props.createdAt.endsWith('Z') || props.createdAt.includes('+') ? '' : 'Z')).toLocaleDateString('ko-KR');
   //객체가 통째로 author에 들어가 있다.
   const searchedData = users.find((user) => user.id === props.authorId) || "알수 없음";
 
