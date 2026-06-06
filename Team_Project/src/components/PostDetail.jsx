@@ -188,7 +188,18 @@ const PostDetail = () => {
             </header>
 
             <div className="post-card__content">
-              <p className="post-card__text">{postData.content}</p>
+              {postData.category === "notification" && /^https?:\/\//.test(postData.content) ? (
+                <a
+                  className="post-card__source-link"
+                  href={postData.content}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  원문 보기
+                </a>
+              ) : (
+                <p className="post-card__text">{postData.content}</p>
+              )}
             </div>
 
             <div className="post-card__actions">

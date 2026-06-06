@@ -75,6 +75,28 @@
     padding: 20px 0;
 }
 
+.post-card__source-link {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #002b49;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.post-card__source-link:hover {
+    background-color: #004070;
+    transform: translateY(-1px);
+}
+
+.post-card__source-link:active {
+    transform: scale(0.97);
+}
+
 .post-card__text {
     font-size: 14px;
     color: #333333;
@@ -222,6 +244,11 @@
   .post-card__text {
     font-size: 13px;
     line-height: 1.5;
+  }
+
+  .post-card__source-link {
+    font-size: 13px;
+    padding: 8px 14px;
   }
 
   .post-main-image {
