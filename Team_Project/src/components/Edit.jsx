@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./Edit.css"; 
 import { useContext, useRef, useState } from "react";
 import { CommentDataContext, CommentDispatchContext, PostDataContext, PostDispatchContext } from "../util/context";
+import useTitle from "../hook/useTitle";
 
 const Edit = ()=>{
     const nav = useNavigate(); 
@@ -18,6 +19,8 @@ const Edit = ()=>{
     }); 
     const titleRef = useRef(); 
     const contentRef = useRef(); 
+
+    useTitle(type === "post" ? "글 수정 페이지" : "댓글 수정 페이지");
 
     const onChangeData = (e)=>{
         const {name, value} = e.target; 

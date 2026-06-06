@@ -11,6 +11,7 @@ import SettingProfile from "./SettingProfile";
 import { clearAuth, getStoredUser, setStoredUser } from "../api/authStorage";
 import * as usersApi from "../api/users";
 import * as authApi from "../api/auth";
+import useTitle from "../hook/useTitle";
 
 const MyPage = () => {
   const posts = useContext(PostDataContext);
@@ -32,6 +33,8 @@ const MyPage = () => {
   const [pwdMsg, setPwdMsg] = useState("");
   const nav = useNavigate();
   const idRef = useRef();
+
+  useTitle("마이페이지"); 
 
   const currentUserData = users.find((user) => user.userName === userId);
 

@@ -10,6 +10,7 @@ import { CommentDataContext, PostDataContext, PostDispatchContext, UserDataConte
 import { formattedDate } from "../util/formattedDate";
 import { getStoredUser, setStoredUser } from "../api/authStorage";
 import * as postsApi from "../api/posts";
+import useTitle from "../hook/useTitle";
 
 function isLoggedIn() {
   const stored = getStoredUser();
@@ -54,6 +55,8 @@ const PostDetail = () => {
     }
      // eslint-disable-next-line 
   }, [postId]);
+
+  useTitle("글 상세 페이지");
 
   const postData = posts.find((post) => post.postId === Number(postId));
 

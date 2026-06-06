@@ -2,9 +2,12 @@ import "./SearchPage.css";
 import SearchTitle from "./SearchTitle"; 
 import SearchBoard from "./SearchBoard";
 import { useParams } from "react-router-dom";
+import useTitle from "../hook/useTitle";
 
 const SearchPage = ()=>{
     const {searchId} = useParams(); 
+
+    useTitle(`검색 결과: ${searchId}`);
 
     return (
        <div className="search-page">
